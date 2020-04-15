@@ -16,8 +16,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatDialogModule, 
     MatFormFieldModule, 
     FlexLayoutModule,
+    HttpClientModule,
+    MatDividerModule,  
+    MatSnackBar,  
   ],
   entryComponents:[LoginComponent],
   providers: [],

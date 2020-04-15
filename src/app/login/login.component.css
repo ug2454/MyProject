@@ -5,3 +5,42 @@
   }
   
  
+  .button-background:hover{
+     background: lightgreen;
+    transition: 0.6s ease-in-out; 
+    border-radius: 30px;
+  }
+
+  .button-background1{
+    
+   float:right;
+ }
+
+ .button-background1:hover{
+  background: lightgreen;
+ transition: 0.6s ease-in-out; 
+ border-radius: 30px;
+}
+  .main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  /* .mat-header-title{
+    background:aquamarine;
+    
+  } */
+
+  .main-card{
+    width: 400vh;    
+    /* background: linear-gradient(to bottom ,blue,white); */
+    border: none ;
+    /* border-radius: 30px; */
+    /* box-shadow: 0 0 20px blue; */
+  }
+.label-first-name{
+  width: auto;
+}

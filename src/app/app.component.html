@@ -1,13 +1,12 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-button routerLink="/">My Project</button>
-    <div class="example-button-row">
-      <span class="example-fill-remaining-space"></span>
-      <span class="align-center"></span>
-      <span class="example-spacer"></span>
-      <button mat-button [routerLink]="['/about']">About</button>
-      <button mat-button [routerLink]="['/login']">Login</button>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+  <div class="backgrnd">
+    <mat-toolbar class="example-header">
+    
+      <div class="example-button-row">
+      <button class="button-background" mat-button routerLink="/">My Project</button>      
+        <button class="button-background" mat-button [routerLink]="['/about']">About</button>
+        <button class="button-background" mat-button [routerLink]="['/login']">Login</button>
+      </div>
+    
+  </mat-toolbar>
+</div>
 <router-outlet></router-outlet>

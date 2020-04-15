@@ -13,7 +13,7 @@ export class LoginComponent {
   constructor(public dialog:MatDialog) { }
 
   public login(){
-    
+      
   }
  public openDialog(){
   let dialogRef = this.dialog.open(SignupComponent, {
