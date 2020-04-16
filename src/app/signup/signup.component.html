@@ -6,7 +6,8 @@
             <td>
                 <mat-form-field appearance="standard">
                     <mat-label>Enter Your First Name</mat-label>
-                    <input id="registerFirstName" name="firstName" matInput placeholder="First Name" ngModel required type="text">
+                    <input id="registerFirstName" name="firstName" matInput placeholder="First Name" ngModel required
+                        type="text">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     <mat-hint>eg. Uday</mat-hint>
                 </mat-form-field>
@@ -15,7 +16,8 @@
             <td>
                 <mat-form-field style="text-align: left;" appearance="standard">
                     <mat-label>Enter Your Last Name</mat-label>
-                    <input id="registerLastName" name="lastName" matInput placeholder="Last Name" ngModel required type="text">
+                    <input id="registerLastName" name="lastName" matInput placeholder="Last Name" ngModel required
+                        type="text">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     <mat-hint>eg. Garg</mat-hint>
                 </mat-form-field>
@@ -35,17 +37,21 @@
             <td>
                 <mat-form-field style="text-align: left;" appearance="standard">
                     <mat-label>Enter Your Password</mat-label>
-                    <input id="registerPassword" name="password" type="password" matInput placeholder="Password" ngModel required>
+                    <input id="registerPassword" name="password" type="password" matInput placeholder="Password" ngModel
+                        required>
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                 </mat-form-field>
             </td>
         </tr>
     </table>
 
+    <div *ngIf="showMsg">
+        <p><strong> Registration Successfull!!!</strong>
+        </p>
+    </div>
 
-
-<div mat-dialog-actions>
-    <button mat-raised-button color="primary" (onClick)="openSnackBar()" [disabled]="!signupForm.valid">Register</button>
-    <button mat-raised-button color="primary" matDialogClose>Cancel</button>
-</div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" [disabled]="!signupForm.valid">Register</button>
+        <button mat-raised-button color="primary" matDialogClose>Cancel</button>
+    </div>
 </form>

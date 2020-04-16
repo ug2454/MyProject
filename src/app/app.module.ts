@@ -17,7 +17,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatSnackBar} from '@angular/material/snack-bar';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -46,8 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule, 
     FlexLayoutModule,
     HttpClientModule,
-    MatDividerModule,  
-    MatSnackBar,  
+    MatDividerModule,   
   ],
   entryComponents:[LoginComponent],
   providers: [],
