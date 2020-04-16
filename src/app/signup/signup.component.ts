@@ -9,7 +9,7 @@ import { DataserviceService } from '../dataservice.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private service: DataserviceService, private dialogRef: MatDialogRef<SignupComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(private service: DataserviceService) { }
 
 
   showMsg: boolean = false;
@@ -17,25 +17,12 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClose() {
-    this.dialogRef.close();
-  }
+ 
 
 
 
-  register(form) {
-    console.log(form.value);
-    var formData = this.service.register(form.value).subscribe(data => {
+  
 
-      console.log("SUCCESSFULLY CONNECTED TO SERVER");
-      console.log(data);
-      window.alert("Registration Successfull");
-    });
-
-    console.log(formData);
-    this.dialogRef.close();
-
-  }
 
 
 }

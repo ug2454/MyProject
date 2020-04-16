@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 from flask_cors import CORS
 import json
 import mysql.connector
@@ -35,9 +35,6 @@ def register():
   """
   data = request.data
   result = json.loads(data.decode('utf8'))
-  # insert={}
-  # for insert in result:
-  #     insert["firstName"]=''
 
   print(result)
   conn = database()
@@ -77,11 +74,12 @@ def login():
     '''
   print(query)
   cursor.execute(query)
-  
+  res=cursor.fetchone()
+  print(jsonify(res))
   if cursor.rowcount != 0:
     print("login successfull")
-    return result
-  return result
+    return jsonify(res)
+  return jsonify(res)
 
 
 if __name__ == "__main__":

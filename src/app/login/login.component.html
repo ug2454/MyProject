@@ -3,40 +3,97 @@
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <mat-card class="main-card" style="width:15rem;">
             <mat-card-header class="mat-header-title">
-                <mat-card-title>Login</mat-card-title>
+                <mat-card-title class="title">Login</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                
-                    <table class="example-full-width" cellspacing="0">
-                        <tr>
-                            <td>
-                                <mat-form-field appearance="standard">
-                                    <mat-label class="label-first-name">Enter Your Email</mat-label>
-                                    <input id="loginemail" name="email1" type="email" matInput placeholder="Email" ngModel required>
-                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                                    <mat-hint>eg. someone@something.com</mat-hint>
-                                </mat-form-field>
+                <div [hidden]="isLoggedIn" class="login-validation">Invalid Email or Password</div>
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="standard">
+                                <mat-label class="label-first-name">Enter Your Email</mat-label>
+                                <input id="loginemail" name="email1" type="email" matInput placeholder="Email" ngModel
+                                    required>
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>eg. someone@something.com</mat-hint>
+                            </mat-form-field>
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
 
-                                <mat-form-field appearance="standard">
-                                    <mat-label>Enter Your Password</mat-label>
-                                    <input id="loginpassword" name="password1" type="password"  matInput placeholder="Password" ngModel required>
-                                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-form-field appearance="standard">
+                                <mat-label>Enter Your Password</mat-label>
+                                <input id="loginpassword" name="password1" type="password" matInput
+                                    placeholder="Password" ngModel required>
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
 
-                                </mat-form-field>
-                            </td>
-                        </tr>
-                    </table>
-                
             </mat-card-content>
             <mat-card-actions>
-                <button class="button-background"  mat-raised-button [disabled]="!loginForm.valid" color="primary">Login</button>
-                <button class="button-background1" mat-raised-button (click)="openDialog()" color="primary">Sign
-                    Up</button>
+                <button class="button-background" mat-raised-button [disabled]="!loginForm.valid"
+                    color="primary">Login</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+
+
+    <form #signUpForm="ngForm" (ngSubmit)="register(signUpForm)">
+        <mat-card class="main-card" style="width: fit-content;">
+            <mat-card-header class="mat-header-title">
+                <mat-card-title style="color: blue;" style="">Sign Up</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table class="example-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="standard">
+                                <mat-label class="label-first-name">Enter Your First Name</mat-label>
+                                <input id="firstName" name="firstName" type="text" matInput placeholder="First Name"
+                                    ngModel required>
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>eg. Uday</mat-hint>
+                            </mat-form-field>
+
+                        </td>
+                        <td>
+                            <mat-form-field appearance="standard">
+                                <mat-label>Enter Your Last Name</mat-label>
+                                <input id="lastName" name="lastName" type="text" matInput placeholder="Last Name"
+                                    ngModel required>
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>eg. Garg</mat-hint>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="standard">
+                                <mat-label class="label-first-name">Enter Your Email</mat-label>
+                                <input id="email" name="email" type="text" matInput placeholder="Email"
+                                    ngModel required>
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>eg. someone@something.com</mat-hint>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field appearance="standard">
+                                <mat-label>Enter Password</mat-label>
+                                <input id="password" name="password" type="password" matInput placeholder="Password"
+                                    ngModel required>
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="button-background" mat-raised-button [disabled]="!signUpForm.valid"
+                    color="primary">Register</button>
             </mat-card-actions>
         </mat-card>
     </form>

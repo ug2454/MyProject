@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { SignupComponent } from '../signup/signup.component';
 import { DataserviceService } from '../dataservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'login',
@@ -11,23 +12,36 @@ import { DataserviceService } from '../dataservice.service';
 export class LoginComponent {
   
 
-  constructor(public dataService:DataserviceService, public dialog:MatDialog) { }
+  constructor(private router:Router, public dataService:DataserviceService, public dialog:MatDialog) { }
+
+  isLoggedIn:boolean=true;
+
 
   public login(form){
       console.log(form.value);
       this.dataService.login(form.value).subscribe(data=>{
         console.log("SUCCESSFULLY CONNECTED TO SERVER");
       console.log(data);
-      window.alert("Login Successfull");
+      
+      if(data){
+        window.alert("Login Successfull");
+          this.router.navigate(["/"]);
+      }
+      else{
+        this.isLoggedIn=false;
+      }
       });
   }
- public openDialog(){
-  //  e.preventDefault();
-   console.log("open dialog")
-  let dialogRef = this.dialog.open(SignupComponent, {
-    height: '400px',
-    width: '600px',
-  });
- }
+
+  register(form) {
+    console.log(form.value);
+    var formData = this.dataService.register(form.value).subscribe(data => {
+
+      console.log("SUCCESSFULLY CONNECTED TO SERVER");
+      console.log(data);
+      window.alert("Registration Successfull");
+    });
+
+  }
  
 }
