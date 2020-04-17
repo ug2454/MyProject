@@ -4,7 +4,12 @@
       <div class="example-button-row">
       <button class="button-background" mat-button routerLink="/">My Project</button>      
         <button class="button-background" mat-button [routerLink]="['/about']">About</button>
-        <button class="button-background" mat-button [routerLink]="['/login']">Login</button>
+        <button class="button-background" mat-button [routerLink]="['/login']">Login/SignUp</button>
+        <button mat-button [matMenuTriggerFor]="menu">TimeTable</button>
+      <mat-menu #menu="matMenu">
+       <button  mat-menu-item>Users</button>
+       <button mat-menu-item>Create Time Table</button>
+      </mat-menu>
       </div>
     
   </mat-toolbar>

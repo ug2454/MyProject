@@ -11,10 +11,10 @@
     border-radius: 30px;
   }
 
-  .button-background1{
+  .button-background{
     
    float:right;
-   justify-content: center;
+   width:50%;
  }
 
  .button-background1:hover{
@@ -22,12 +22,12 @@
  transition: 0.6s ease-in-out; 
  border-radius: 30px;
 }
-  .main-div{
-    height: 100vh;
+  .main-div {
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    /* background: linear-gradient(rgb(255,215,0),#fff);  */
   }
 
   /* .mat-header-title{
@@ -35,12 +35,20 @@
     
   } */
 
-  .main-card{
+   .main-card{ 
     width: 400vh;    
     /* background: linear-gradient(to bottom ,blue,white); */
-    border: none ;
+    /* border: none ;
+    border-color: royalblue; */
     /* border-radius: 30px; */
     /* box-shadow: 0 0 20px blue; */
+    background: linear-gradient(to bottom right, rgb(255,215,0),#fff);
+  } 
+  .main-card1{
+    justify-content: center;
+    margin-left: 50px;
+    /* border:4px solid linear-gradient(); */
+    background: linear-gradient(to bottom right,rgb(255,215,0),#fff);
   }
 .label-first-name{
   width: auto;
@@ -48,8 +56,7 @@
 .login-validation{
   background-color: red;
 }
-.title{
+.title1{
   
-  justify-content: center;
-  align-items: center;
+  color: rgb(156, 39, 176);
 }

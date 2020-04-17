@@ -20,6 +20,8 @@ import {MatDividerModule} from '@angular/material/divider';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule, 
     FlexLayoutModule,
     HttpClientModule,
-    MatDividerModule,   
+    MatDividerModule,  
+    MatMenuModule, 
   ],
   entryComponents:[LoginComponent],
   providers: [],

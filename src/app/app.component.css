@@ -42,5 +42,5 @@
   } */
 
 .backgrnd {
-  background-color: blue;
+  background-color: linear-gradient(rgb(255,215,0),#fff);
 }
