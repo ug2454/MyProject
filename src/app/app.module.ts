@@ -21,6 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
 import { TimetableComponent } from './timetable/timetable.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TimetableComponent } from './timetable/timetable.component';
     AppComponent,
     AboutComponent,
     LoginComponent,
-    TimetableComponent
+    TimetableComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,6 @@ import { TimetableComponent } from './timetable/timetable.component';
     MatDividerModule,  
     MatMenuModule, 
   ],
-  entryComponents:[LoginComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

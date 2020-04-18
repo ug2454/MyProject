@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { TimetableComponent } from './timetable/timetable.component';
+import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { TimetableComponent } from './timetable/timetable.component';
 
 
 const routes: Routes = [
-  {path: '',redirectTo:"home",pathMatch:"full"},
+  { path: '', component: LoginComponent ,pathMatch:'full'},
   { path: 'about', component: AboutComponent },
-  { path: 'login', component: LoginComponent },
-  {path: 'timetable',component:TimetableComponent}
+  { path: 'timetable', component: TimetableComponent },
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({

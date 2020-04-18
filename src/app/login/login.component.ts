@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   
 
-  constructor(private router:Router, public dataService:DataserviceService, public dialog:MatDialog) { }
+  constructor(private router:Router, public dataService:DataserviceService) { }
 
   isLoggedIn:boolean=true;
 
@@ -25,7 +25,7 @@ export class LoginComponent {
       
       if(data){
         window.alert("Login Successfull");
-          this.router.navigate(["/timetable"]);
+          this.router.navigate(["/home"]);
       }
       else{
         this.isLoggedIn=false;

@@ -60,3 +60,13 @@
   
   color: rgb(156, 39, 176);
 }
+.title-class{
+  text-align: center;
+  margin-top: 50px;
+
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(156, 39, 176);
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  text-shadow: 2px 2px gold;
+}

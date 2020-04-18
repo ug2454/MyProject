@@ -1,0 +1,54 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .example-button-row button, .example-button-row a {
+    margin-right: 8px;
+  }
+  
+  .example-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+  }
+  
+  .example-header {
+    /* background-color:aqua; */
+    background: rgb(156, 39, 176);
+    display: flex;
+    flex-wrap: wrap
+  }
+  
+  .button-background {
+    background: rgb(156, 39, 176);
+    color: white;
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  /* .button-background:hover{
+      background:white;
+      transition: 0.6s ease-in-out;
+  
+      border-radius: 30px;
+    } */
+  
+  .backgrnd {
+    background-color: lightblue;
+  }
+  
+  .menu-button{
+    background: rgb(156, 39, 176);
+    color: white;
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+  }
