@@ -1,17 +1,14 @@
-  <div class="backgrnd">
+  <div>
     <mat-toolbar class="example-header">
     
       <div class="example-button-row">
       <button class="button-background" mat-button routerLink="/">My Project</button>      
         <button class="button-background" mat-button [routerLink]="['/about']">About</button>
         <button class="button-background" mat-button [routerLink]="['/login']">Login/SignUp</button>
-        <button mat-button [matMenuTriggerFor]="menu">TimeTable</button>
-      <mat-menu #menu="matMenu">
-       <button  mat-menu-item>Users</button>
-       <button mat-menu-item>Create Time Table</button>
-      </mat-menu>
+        <button class="menu-button" mat-button >TimeTable</button>
       </div>
     
   </mat-toolbar>
-</div>
+
 <router-outlet></router-outlet>
+</div>

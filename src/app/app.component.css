@@ -42,5 +42,13 @@
   } */
 
 .backgrnd {
-  background-color: linear-gradient(rgb(255,215,0),#fff);
+  background-color: lightblue;
+}
+
+.menu-button{
+  background: rgb(156, 39, 176);
+  color: white;
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import { SignupComponent } from '../signup/signup.component';
+// import { TimeTableComponent } from '../timetable/timetable.component';
 import { DataserviceService } from '../dataservice.service';
 import { Router } from '@angular/router';
 
@@ -21,11 +21,11 @@ export class LoginComponent {
       console.log(form.value);
       this.dataService.login(form.value).subscribe(data=>{
         console.log("SUCCESSFULLY CONNECTED TO SERVER");
-      console.log(data);
+      console.log(data," DATA COMING FROM SERVER");
       
       if(data){
         window.alert("Login Successfull");
-          this.router.navigate(["/"]);
+          this.router.navigate(["/timetable"]);
       }
       else{
         this.isLoggedIn=false;

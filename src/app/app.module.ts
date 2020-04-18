@@ -8,7 +8,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -21,14 +20,15 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
+import { TimetableComponent } from './timetable/timetable.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    SignupComponent,
-    LoginComponent
+    LoginComponent,
+    TimetableComponent
   ],
   imports: [
     BrowserModule,
