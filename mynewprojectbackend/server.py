@@ -1,4 +1,4 @@
-from flask import Flask, request,jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import json
 import mysql.connector
@@ -74,12 +74,48 @@ def login():
     '''
   print(query)
   cursor.execute(query)
-  res=cursor.fetchone()
+  res = cursor.fetchone()
   print(jsonify(res))
   if cursor.rowcount != 0:
     print("login successfull")
     return jsonify(res)
   return jsonify(res)
+
+
+@app.route('/', methods=["GET"])
+def getuserdetails():
+  conn = database()
+  cursor = conn.cursor(buffered=True)
+
+  query = '''
+    select * from user
+    '''
+  print(query)
+  cursor.execute(query)
+  res = cursor.fetchall()
+
+  headerquery = '''select column_name from information_schema.columns where table_name='user' and table_schema='mydb'
+  order by ordinal_position
+  '''
+  cursor.execute(headerquery)
+  headerresult = cursor.fetchall()
+  headerlist = []
+  for h in headerresult:
+    for x in h:
+      headerlist.append(x)
+  print(headerlist)
+
+  headerjson = []
+  print(res)
+  for value in res:
+    dictn = {}
+    for j, columnname in enumerate(headerlist):
+      dictn[columnname] = value[j]
+    headerjson.append(dictn)
+
+  # dictOfWords = {i: headerlist[i] for i in range(0, len(listOfStr))}
+  print(headerjson)
+  return jsonify(headerjson)
 
 
 if __name__ == "__main__":

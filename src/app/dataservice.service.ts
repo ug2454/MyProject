@@ -6,7 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataserviceService {
   url:any="http://127.0.0.1:5000";
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
+
+
+
+
 
   register(data):any{
     return this.httpClient.post(this.url+"/register",data,{responseType:'json'});
@@ -15,4 +19,8 @@ export class DataserviceService {
     return this.httpClient.post(this.url+"/login",data,{responseType:'json'});
   }
   
+  getUserDetails():any{
+    return this.httpClient.get(this.url);
+  }
+
 }

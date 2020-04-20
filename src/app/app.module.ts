@@ -22,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
 import { TimetableComponent } from './timetable/timetable.component';
 import { HomeComponent } from './home/home.component';
+import { CreatetablepopupComponent } from './createtablepopup/createtablepopup.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     AboutComponent,
     LoginComponent,
     TimetableComponent,
-    HomeComponent
+    HomeComponent,
+    CreatetablepopupComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     MatDividerModule,  
     MatMenuModule, 
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

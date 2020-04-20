@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+import { CreatetablepopupComponent } from '../createtablepopup/createtablepopup.component';
 
 @Component({
   selector: 'timetable',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimetableComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog():void{
+    const dialogRef = this.dialog.open(CreatetablepopupComponent,{
+      width:'1000px',
+      height:'600px'
+    });
   }
 
 }
