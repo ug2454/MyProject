@@ -1,9 +1,27 @@
+<div style="background-color: #3f51b5;height: 45px;color: white;">
+    <h1 class="title-table" >User Details</h1>
+</div>
 
-<mat-card *ngFor="let user of users" style="margin-top:10px;">
-    <mat-card-header>
-        <mat-card-title>{{user.firstName}}</mat-card-title>       
-    </mat-card-header>
-</mat-card>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+
+
+    <ng-container matColumnDef="idUser">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;font-size: 20px; color:#3f51b5 ;">ID</th>
+        <td mat-cell *matCellDef="let user"> {{user.iduser}} </td>
+    </ng-container>
+    <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;font-size: 20px;color:#3f51b5 ;">First Name</th>
+        <td mat-cell *matCellDef="let user"> {{user.firstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold;font-size: 20px;color:#3f51b5 ;">Last Name</th>
+        <td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+    </ng-container>
+   
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let users; columns: displayedColumns;"></tr>
+</table>
 
 <div mat-dialog-actions>
     <button mat-raised-button color="primary" matDialogClose>Cancel</button>

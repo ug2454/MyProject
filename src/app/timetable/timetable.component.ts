@@ -17,7 +17,8 @@ export class TimetableComponent implements OnInit {
   openDialog():void{
     const dialogRef = this.dialog.open(CreatetablepopupComponent,{
       width:'1000px',
-      height:'600px'
+      height:'600px',
+      autoFocus:false
     });
   }
 
