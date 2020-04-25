@@ -3,7 +3,7 @@
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <mat-card id="matcard" class="main-card" style="width: fit-content;">
             <mat-card-header>
-                <mat-card-title class="title1" style="margin-left: 50px;" >Login</mat-card-title>
+                <mat-card-title class="title1" style="margin-left: 50px;">Login</mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <div [hidden]="isLoggedIn" class="login-validation">Invalid Email or Password</div>
@@ -46,10 +46,11 @@
         <mat-card id="matcard1" class="main-card1" style="width: fit-content;">
             <mat-card-header class="mat-header-title">
                 <div class="title1">
-                <mat-card-title style="margin-left: 120px;">Sign Up</mat-card-title>
+                    <mat-card-title style="margin-left: 120px;">Sign Up</mat-card-title>
                 </div>
             </mat-card-header>
             <mat-card-content>
+                <div [hidden]="isRegistration" class="login-validation">Email already exist. Register with new email</div>
                 <table class="example-full-width" cellspacing="0">
                     <tr>
                         <td>
@@ -76,8 +77,8 @@
                         <td>
                             <mat-form-field appearance="standard">
                                 <mat-label class="label-first-name">Enter Your Email</mat-label>
-                                <input id="email" name="email" type="text" matInput placeholder="Email"
-                                    ngModel required>
+                                <input id="email" name="email" type="text" matInput placeholder="Email" ngModel
+                                    required>
                                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                                 <mat-hint>eg. someone@something.com</mat-hint>
                             </mat-form-field>

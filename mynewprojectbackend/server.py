@@ -43,17 +43,29 @@ def register():
   def handleQuotes(s):
     return '"' + s + '"'
 
-  query = '''
-    INSERT INTO USER(firstName,lastName,email,password) VALUES (''' + handleQuotes(
-    result["firstName"]) + ''',''' + handleQuotes(result["lastName"]) + ''',''' + handleQuotes(
-    result["email"]) + ''',''' + \
-          handleQuotes(result["password"]) + ''')
-    '''
-  print(query)
-  data = cursor.execute(query)
-  conn.commit()
-  conn.close()
-  return result
+  querycheckuser = '''
+  select * from user where email=''' + handleQuotes(
+    result["email"]) + '''
+  '''
+  cursor.execute(querycheckuser)
+  data = len(cursor.fetchall())
+  print(data)
+  if cursor.rowcount >= 1:
+    print("register failed")
+    return str(data)
+  else:
+    query = '''
+      INSERT INTO USER(firstName,lastName,email,password) VALUES (''' + handleQuotes(
+      result["firstName"]) + ''',''' + handleQuotes(result["lastName"]) + ''',''' + handleQuotes(
+      result["email"]) + ''',''' + \
+            handleQuotes(result["password"]) + ''')
+      '''
+    print(query)
+    cursor.execute(query)
+
+    conn.commit()
+    conn.close()
+    return result
 
 
 @app.route('/login', methods=["POST"])

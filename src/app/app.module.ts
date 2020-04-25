@@ -24,6 +24,8 @@ import { TimetableComponent } from './timetable/timetable.component';
 import { HomeComponent } from './home/home.component';
 import { CreatetablepopupComponent } from './createtablepopup/createtablepopup.component';
 import {MatTableModule} from '@angular/material/table';
+import {CookieService} from 'ngx-cookie-service';
+import {AuthGuard} from './auth.guard';
 
 
 @NgModule({
@@ -54,9 +56,9 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule,
     MatDividerModule,  
     MatMenuModule, 
-    MatTableModule,
+    MatTableModule    
   ],
-  providers: [],
+  providers: [CookieService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

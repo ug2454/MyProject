@@ -1,37 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 // import { TimeTableComponent } from '../timetable/timetable.component';
 import { DataserviceService } from '../dataservice.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+@Injectable({
+  providedIn: 'root'
+})
 export class LoginComponent {
+
+
+  constructor(private router: Router, public dataService: DataserviceService,private cookie:CookieService) { }
+
+  isLoggedIn: boolean = true;
+  isRegistration :boolean=true;
+  username: any
+  usernm = this.username;
+
   
 
-  constructor(private router:Router, public dataService:DataserviceService) { }
+  public login(form) {
+    console.log("login value",form.value["email1"]);
+    this.dataService.login(form.value).subscribe(data => {
+      console.log("SUCCESSFULLY CONNECTED TO SERVER");
+      console.log(data, " DATA COMING FROM SERVER");
+      this.username = data[1];
+      console.log(this.username);
+      this.cookie.set('cookie-name',this.username)
 
-  isLoggedIn:boolean=true;
-
-
-  public login(form){
-      console.log(form.value);
-      this.dataService.login(form.value).subscribe(data=>{
-        console.log("SUCCESSFULLY CONNECTED TO SERVER");
-      console.log(data," DATA COMING FROM SERVER");
-      
-      if(data){
+      if (data) {
         window.alert("Login Successfull");
-          this.router.navigate(["/home"]);
+        this.dataService.setLoggedIn(true);
+        this.router.navigate(["/home"]);
       }
-      else{
-        this.isLoggedIn=false;
+      else {
+        this.isLoggedIn = false;
       }
-      });
+    });
   }
+  userName() {
+    return this.username;
+  }
+
 
   register(form) {
     console.log(form.value);
@@ -39,9 +55,16 @@ export class LoginComponent {
 
       console.log("SUCCESSFULLY CONNECTED TO SERVER");
       console.log(data);
-      window.alert("Registration Successfull");
+      if(data>=1){
+        this.isRegistration=false;
+      }
+      else{
+        
+        window.alert("Registration Successfull");
+        this.isRegistration=true;
+      }
     });
 
   }
- 
+
 }
