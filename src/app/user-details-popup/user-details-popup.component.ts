@@ -3,11 +3,11 @@ import { DataserviceService } from '../dataservice.service';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'createtablepopup',
-  templateUrl: './createtablepopup.component.html',
-  styleUrls: ['./createtablepopup.component.css']
+  selector: 'user-details-popup',
+  templateUrl: './user-details-popup.component.html',
+  styleUrls: ['./user-details-popup.component.css']
 })
-export class CreatetablepopupComponent implements OnInit {
+export class UserDetailsPopupComponent implements OnInit {
 
   @ViewChild('TABLE',{static:false})table:ElementRef;
   

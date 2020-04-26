@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogModule, MatDialog} from '@angular/material/dialog';
-import { CreatetablepopupComponent } from '../createtablepopup/createtablepopup.component';
+import { UserDetailsPopupComponent } from '../user-details-popup/user-details-popup.component';
 
 @Component({
   selector: 'timetable',
@@ -15,7 +15,14 @@ export class TimetableComponent implements OnInit {
   }
 
   openDialog():void{
-    const dialogRef = this.dialog.open(CreatetablepopupComponent,{
+    const dialogRef = this.dialog.open(UserDetailsPopupComponent,{
+      width:'1000px',
+      height:'600px',
+      autoFocus:false
+    });
+  }
+  openTimeTableGrid():void{
+    const dialogRef = this.dialog.open(UserDetailsPopupComponent,{
       width:'1000px',
       height:'600px',
       autoFocus:false

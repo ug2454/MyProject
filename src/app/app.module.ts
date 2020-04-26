@@ -22,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
 import { TimetableComponent } from './timetable/timetable.component';
 import { HomeComponent } from './home/home.component';
-import { CreatetablepopupComponent } from './createtablepopup/createtablepopup.component';
+import { UserDetailsPopupComponent } from './user-details-popup/user-details-popup.component';
 import {MatTableModule} from '@angular/material/table';
 import {CookieService} from 'ngx-cookie-service';
 import {AuthGuard} from './auth.guard';
@@ -35,7 +35,7 @@ import {AuthGuard} from './auth.guard';
     LoginComponent,
     TimetableComponent,
     HomeComponent,
-    CreatetablepopupComponent
+    UserDetailsPopupComponent
   ],
   imports: [
     BrowserModule,
