@@ -4,7 +4,7 @@
       <div class="example-button-row">     
         <button class="menu-button" mat-button [routerLink]="['/timetable']" >TimeTable</button>  
         <button class="button-background" mat-button [routerLink]="['/about']">About</button>
-        <button class="button-background" mat-button>SignOut</button>
+        <button class="button-background" mat-button (click)="signOut()">SignOut</button>
         <button class="button-background" mat-button>Logged In As: {{cookievalue}}</button>
         
       </div>

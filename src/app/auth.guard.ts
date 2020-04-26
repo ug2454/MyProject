@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DataserviceService } from './dataservice.service';
 
@@ -9,11 +9,18 @@ import { DataserviceService } from './dataservice.service';
 
 export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
 
-  constructor(private auth:DataserviceService){}
+  constructor(private auth:DataserviceService,private router:Router){}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      
+      if(!this.auth.isLoggedIn){
+        this.router.navigate(['']);
+      }
+      else if(this.auth.isLoggedIn=='false'){
+        this.router.navigate(['']);
+      }
     return this.auth.isLoggedIn;
   }
   canActivateChild(

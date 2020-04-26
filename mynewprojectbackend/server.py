@@ -90,6 +90,7 @@ def login():
   print(jsonify(res))
   if cursor.rowcount != 0:
     print("login successfull")
+    
     return jsonify(res)
   return jsonify(res)
 
