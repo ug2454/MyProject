@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   signOut(){
     console.log('clicked')
     localStorage.removeItem('loggedIn');
-    // this.router.navigate(['']);
+    this.router.navigate(['']);
   }
    
 

@@ -1,0 +1,49 @@
+<div style="background-color: #3f51b5;height: 45px;color: white;width: 942.5px;">
+    <h1 class="title-table">Time Table</h1>
+</div>
+
+
+<table mat-table [dataSource]="dataSource" mat-table class="mat-elevation-z2" style="width: fit-content;">
+    <ng-container matColumnDef="idtimetable">
+        <th mat-header-cell *matHeaderCellDef class="column-header-style">Period</th> 
+        <td style="padding-left: 20px;" mat-cell *matCellDef="let element">{{element.idtimetable}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Monday">
+        <th mat-header-cell *matHeaderCellDef class="column-header-style" >Monday</th>
+        <td mat-cell *matCellDef="let element">
+            <mat-form-field style="width: 120px;"> 
+                <input  matInput [ngModel]="element.Monday" autofocus>
+            </mat-form-field>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="Tuesday">
+        <th mat-header-cell *matHeaderCellDef class="column-header-style">Tuesday</th>
+        <td mat-cell *matCellDef="let element"><mat-form-field style="width: 120px;"> 
+            <input  matInput [ngModel]="element.Tuesday" autofocus>
+        </mat-form-field></td>
+    </ng-container>
+    <ng-container matColumnDef="Wednesday">
+        <th mat-header-cell *matHeaderCellDef class="column-header-style">Wednesday</th>
+        <td mat-cell *matCellDef="let element"><mat-form-field style="width: 120px;"> 
+            <input  matInput [ngModel]="element.Wednesday" autofocus>
+        </mat-form-field></td>
+    </ng-container>
+    <ng-container matColumnDef="Thursday">
+        <th mat-header-cell *matHeaderCellDef class="column-header-style" style="padding-right: 80px;">Thursday</th>
+        <td mat-cell *matCellDef="let element"><mat-form-field style="width: 120px;"> 
+            <input  matInput [ngModel]="element.Thursday" autofocus>
+        </mat-form-field></td>
+    </ng-container>
+    <ng-container matColumnDef="Friday">
+        <th mat-header-cell *matHeaderCellDef class="column-header-style" style="padding-right: 100px;">Friday</th>
+        <td mat-cell *matCellDef="let element"><mat-form-field style="width: 120px;"> 
+            <input  matInput [ngModel]="element.Friday" autofocus>
+        </mat-form-field></td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+</table>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" matDialogClose>Cancel</button>
+</div>

@@ -12,7 +12,6 @@ export class UserDetailsPopupComponent implements OnInit {
   @ViewChild('TABLE',{static:false})table:ElementRef;
   
   users:any =[]
-  employeeInfoTable=[];
   dataSource= new MatTableDataSource(this.users)
   
   constructor(private dataService:DataserviceService) { }
@@ -24,8 +23,9 @@ export class UserDetailsPopupComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getUserDetails().subscribe((data)=>{
       this.users=data;
-      console.log("DATA SOURCE"+this.users);
+      
       this.dataSource.data=this.users;
+      console.log("DATA SOURCE"+this.dataSource.data);
       
     });
    

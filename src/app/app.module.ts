@@ -26,6 +26,7 @@ import { UserDetailsPopupComponent } from './user-details-popup/user-details-pop
 import {MatTableModule} from '@angular/material/table';
 import {CookieService} from 'ngx-cookie-service';
 import {AuthGuard} from './auth.guard';
+import { TimetablePopupComponent } from './timetable-popup/timetable-popup.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {AuthGuard} from './auth.guard';
     LoginComponent,
     TimetableComponent,
     HomeComponent,
-    UserDetailsPopupComponent
+    UserDetailsPopupComponent,
+    TimetablePopupComponent
   ],
   imports: [
     BrowserModule,
@@ -50,13 +52,12 @@ import {AuthGuard} from './auth.guard';
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    MatDialogModule, 
-    MatFormFieldModule, 
+    MatDialogModule,
     FlexLayoutModule,
     HttpClientModule,
     MatDividerModule,  
     MatMenuModule, 
-    MatTableModule    
+    MatTableModule,
   ],
   providers: [CookieService,AuthGuard],
   bootstrap: [AppComponent]

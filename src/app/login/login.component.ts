@@ -30,11 +30,12 @@ export class LoginComponent {
     this.dataService.login(form.value).subscribe(data => {
       console.log("SUCCESSFULLY CONNECTED TO SERVER");
       console.log(data, " DATA COMING FROM SERVER");
-      this.username = data[1];
-      console.log(this.username);
-      this.cookie.set('cookie-name',this.username)
+      
 
       if (data) {
+        this.username = data[1];
+      console.log(this.username);
+      this.cookie.set('cookie-name',this.username)
         window.alert("Login Successfull");
         this.dataService.setLoggedIn(true);
         this.router.navigate(["/home"]);
